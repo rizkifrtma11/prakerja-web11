@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validasi Email Real-Time</title>
+</head>
+<body>
+    <h2>Validasi Email Real-Time</h2>
+    <form id="emailForm">
+        <label for="email">Masukkan alamat email: </label>
+        <input type="text" id="email" required><br>
+    </form>
+    
+    <div id="result"></div>
+
+    <script>
+        var emailInput = document.getElementById("email");
+        var resultDiv = document.getElementById("result");
+
+        emailInput.addEventListener("input", function() {
+            var email = emailInput.value;
+            var isValid = isValidEmail(email);
+
+            if (isValid) {
+                resultDiv.textContent = "Format email valid!";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Format email tidak valid!";
+                resultDiv.style.color = "red";
+            }
+        });
+
+        // Fungsi untuk memeriksa format email
+        function isValidEmail(email) {
+            // Regular expression untuk format email
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+    </script>
+</body>
+</html>

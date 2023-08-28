@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mohammad Rizki Fadillah</title>
+</head>
+<body>
+    <form id="loopForm">
+        <label for="kata">Masukkan kalimat : </label>
+        <input type="text" id="kata" required><br>
+        
+        <label for="angka">Banyaknya looping : </label>
+        <input type="number" id="angka" required><br>
+        
+        <button type="button" id="eksekusi">Eksekusi</button>
+    </form>
+    
+    <div id="hasil"></div>
+
+    <script>
+        document.getElementById("eksekusi").addEventListener("click", function() {
+            var kata = document.getElementById("kata").value;
+            var angka = parseInt(document.getElementById("angka").value);
+            var resultDiv = document.getElementById("hasil");
+            
+            if (!isNaN(angka)) {
+                var output = "";
+                for (var i = 1; i <= angka; i++) {
+                    output += i + ". " + kata + "<br>";
+                }
+                resultDiv.innerHTML = output;
+            } else {
+                resultDiv.textContent = "Masukkan angka yang valid.";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Batas Karakter dan Penghitung Mundur</title>
+</head>
+<body>
+    <h2>Batas Karakter dan Penghitung Mundur</h2>
+    <form>
+        <label for="textInput">Masukkan teks (maksimal 255 karakter): </label>
+        <textarea id="textInput" rows="5" maxlength="255"></textarea>
+        <br>
+        <span id="charCount">255</span> karakter tersisa.
+    </form>
+
+    <script>
+        var textInput = document.getElementById("textInput");
+        var charCount = document.getElementById("charCount");
+
+        textInput.addEventListener("input", function() {
+            var remainingChars = 255 - textInput.value.length;
+            charCount.textContent = remainingChars + " karakter tersisa.";
+
+            if (remainingChars < 0) {
+                textInput.value = textInput.value.substring(0, 255);
+                charCount.textContent = "0 karakter tersisa.";
+            }
+        });
+    </script>
+</body>
+</html>

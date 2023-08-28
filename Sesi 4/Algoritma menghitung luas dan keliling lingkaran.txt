@@ -1,0 +1,14 @@
+"Algoritma menghitung luas lingkaran"
+
+1. Masukkan angka untuk jari-jari lingkaran (r)
+2. Menentukan phi = 3.14
+3. Hitung proses luas lingkaran phi x r x r
+4. Tampilkan hasil hitung luas lingkaran
+
+
+Algoritma menghitung keliling O
+
+1. Masukkan angka untuk diameter lingkaran (d)
+2. Menentukan phi = 3.14
+3. Hitung proses luas lingkaran 2 x phi x d
+4. Tampilkan hasil hitung luas lingkaran
