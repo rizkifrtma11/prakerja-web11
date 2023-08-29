@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas sesi 6</title>
+</head>
+<body>
+  <div id="colorfulText" style="text-align: center; font-size: 24px;"></div>
+
+  <script>
+    const colorfulText = document.getElementById("colorfulText");
+    const colors = ["red", "green", "blue"];
+    let colorIndex = 0;
+
+    function changeColor() {
+      colorfulText.style.color = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+    }
+
+    function startAnimation() {
+      setInterval(changeColor, 1000); // Change color every second
+
+      const loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit ex non justo gravida, in hendrerit dui varius. Sed vel aliquet lectus. Proin nec enim nulla.";
+      colorfulText.innerHTML = loremIpsum;
+    }
+
+    startAnimation();
+  </script>
+</body>
+</html>
